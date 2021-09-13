@@ -24,13 +24,7 @@ class RNNClassifier(nn.Module):
         Initialize the model by settingg up the various layers.
         """
         super(RNNClassifier, self).__init__()
-        '''
-        if torch.is_tensor(embedding_tensor):
-            self.embedding = nn.Embedding(vocab_size, embedding_dim, padding_idx=padding_index, _weight=embedding_tensor)
-            self.embedding.weight.requires_grad = False
-        else:
-            self.embedding = nn.Embedding(vocab_size, embedding_dim, padding_idx=padding_index)
-        '''    
+  
         self.embedding = nn.Embedding(vocab_size, embedding_dim, padding_idx=padding_index)
         
         if rnn_model == 'LSTM':
